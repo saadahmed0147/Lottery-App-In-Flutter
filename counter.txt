@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int num = 0;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Center(
+              child: Text(
+            'Lottery App',
+            style: TextStyle(fontSize: 30),
+          )),
+        ),
+        body: SafeArea(
+          child: Center(
+            child: Text(
+              num.toString(),
+              style: const TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            num++;
+            setState(() {});
+            print('tap');
+          },
+          child: const Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+}
